@@ -2,20 +2,21 @@ package org.ewch.menu;
 
 import org.ewch.calculator.Calculator;
 
+import java.math.BigInteger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
 
-    private int numberA;
-    private int numberB;
+    private BigInteger numberA;
+    private BigInteger numberB;
 
     private void getNumberForOperation() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Type number 1: ");
-        this.numberA = scanner.nextInt();
+        this.numberA = BigInteger.valueOf(scanner.nextInt());
         System.out.print("Type number 2: ");
-        this.numberB = scanner.nextInt();
+        this.numberB = BigInteger.valueOf(scanner.nextInt());
         System.out.print("Operation result is: ");
     }
 

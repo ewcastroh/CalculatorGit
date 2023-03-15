@@ -1,23 +1,26 @@
 package org.ewch.calculator;
 
+import java.math.BigInteger;
+import java.util.Objects;
+
 public class Calculator {
 
-    public static int sum(int numberA, int numberB) {
-        return numberA + numberB;
+    public static BigInteger sum(BigInteger  numberA, BigInteger  numberB) {
+        return numberA.add(numberB);
     }
 
-    public static int subtract(int numberA, int numberB) {
-        return numberA - numberB;
+    public static BigInteger subtract(BigInteger numberA, BigInteger numberB) {
+        return numberA.subtract(numberB);
     }
 
-    public static int multiplication(int numberA, int numberB) {
-        return numberA * numberB;
+    public static BigInteger multiplication(BigInteger numberA, BigInteger numberB) {
+        return numberA.multiply(numberB);
     }
 
-    public static int division(int numberA, int numberB) {
-        if (numberB == 0) {
+    public static BigInteger division(BigInteger numberA, BigInteger numberB) {
+        if (Objects.equals(numberB, BigInteger.ZERO)) {
             throw new ArithmeticException("Division by Zero not allowed it.");
         }
-        return numberA / numberB;
+        return numberA.divide(numberB);
     }
 }
